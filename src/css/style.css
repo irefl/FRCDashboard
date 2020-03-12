@@ -28,12 +28,17 @@ button, input[type="text"], input[type="number"], .select-container, select {
 .select-container {
     padding: 0;
     display: inline-block;
+    width: 100%;
+    height: 10%;
+    margin-top: 0%;
 }
 select {
     border: none;
     background: none;
     color: white;
-    height: 25px;
+    height: 100%;
+    width: 100%;
+    font-size: 1.25vw;
 }
 input[type="text"], input[type="number"] {
     cursor: text;
@@ -69,10 +74,10 @@ header {
 #camera {
     padding: 0;
     position: fixed;
-    bottom: 0;
+    top: 20%;
     left: 0;
-    width: 65vw;
-    height: 80vh;
+    width: 70vw;
+    height: 75vh;
     overflow: hidden;
     background-color: #333;
     /* You'll need to mess with this a bit to get your camera to work. Replace the url with a live-updating image feed from your camera. Using other camera streaming systems will require some tweaking. */
@@ -82,18 +87,26 @@ header {
     background-position: center center;
 }
 article {
-    top: 0;
-    left: 50vw;
+    margin-left: 60vw;
     height: 100vh;
     width: 20vw;
     position: relative;
+    overflow: hidden;
 }
 article > *{
     position: absolute;
-}hh
+}
+
+#armDown {
+    /* display: none; */
+    fill: black !important;
+}
+#armUp {
+    display: none;
+}
+
 svg * {
     stroke: white;
-    fill: #222;
     stroke-width: 2;
     -webkit-transform-origin: center;
     -ms-transform-origin: center;
@@ -113,10 +126,19 @@ text {
 }
 #shooter {
     position: absolute;
-    width: 34vw;
-    height: 20vh;
-    top: 24%;
+    width: 90%;
+    height: 50%;
+    top: 50%;
 }
+
+#shooter > text {
+    font-size: 3vw;
+}
+
+.smallText {
+    font-size: 1.25vw !important;
+}
+
 /*Gauge colour codes:
 #222 (background fill) - inactive
 Red - Motor inactive, not spinning
@@ -124,14 +146,22 @@ Yellow, any value below target range
 Green, ready*/
 #power {
     position: absolute;
-    width: 25vw;
-    height: 35vh;
-    top: 45%;
+    width: 120%;
+    height: 20%;
+    top: 5%;
+    fill: green !important;
 }
-#powerOverride {
+
+#robotDiagram {
     position: absolute;
-    top: 45%;
-    left: 35%;
+    width: 120%;
+    height: 20%;
+    top: 25%;
+    fill: #222 !important;
+}
+
+#power > text {
+    font-size: 1.5vw !important;
 }
 .gyro-arm {
     -webkit-transform-origin: bottom;
@@ -142,46 +172,10 @@ Green, ready*/
     font-size: 25px;
     text-anchor: middle;
 }
-
-.module > * {
-    stroke: #cc8ac1 !important;
-    fill: #222 !important;
-}
-
-#module1 {
-    width: 175px;
-    height: 175px;
-    left: 0;
-    top: 65%;
-}
-#module2 {
-    width: 175px;
-    height: 175px;
-    right: 0;
-    top: 65%;
-}
-#module3 {
-    width: 175px;
-    height: 175px;
-    right: 0;
-    top: 35%;
-}
-#module4 {
-    width: 175px;
-    height: 175px;
-    left: 0;
-    top: 35%;
-}
-
 #robot-diagram {
     position: absolute;
     bottom: 1px;
     right: 1vw;
-}
-#robot-arm {
-    -webkit-transform-origin: right;
-    -ms-transform-origin: right;
-    transform-origin: right;
 }
 #team {
     font-size: 28px;
@@ -219,4 +213,24 @@ body.login #login {
 }
 #login > button {
     margin-left: 5px;
+}
+#driveMode-section {
+    height: 100%;
+    
+    text-align: center;
+}
+#driveMode-button {
+    height: 15%;
+    width: 100%;
+    font-size: 1.25vw;
+}
+#driveMode-readout {
+    font-size: 1.5vw;
+    margin: 5% auto;
+    padding: 0;
+}
+
+#driveMode-button:hover {
+    color: black;
+    background-color: white;
 }

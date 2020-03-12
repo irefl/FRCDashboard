@@ -19,54 +19,41 @@
     <div id="camera"></div>
     <!-- The main body of the dashboard, by default contains the gyro monitor and the robot diagram -->
     <article>
-        <!-- Gyroscope -->
-        <svg id="gyro">
-            <circle cx="85" cy="85" r="83"></circle>
-            <circle cx="85" cy="85" r="50"></circle>
-            <rect class="gyro-arm" x="80" y="5" width="10" height="80"></rect>
-            <text class="gyro-number" x="90" y="115">0°</text>
+        <svg id="power">
+            <rect width="2.5%" height="15%" x="0%" y="12.75%"></rect>
+            <rect width="40%" height="40%" x="2.5%"></rect>
+            <text x="9.5%" y="25%">12.0V</text>
+        </svg>
+        <svg id="robotDiagram">
+            <rect width="40%" height="40%" x="30%" y="40%"></rect>
+            <rect id="armUp" class="up" width="2.5%" height="46.5%" x="27.5%" y="0"></rect>
+            <rect id="armDown" class="up" width="20%" height="6.5%" x="10%" y="40%"></rect>
+            <circle r="5%" cx="65%" cy="85%"></circle>
+            <circle r="5%" cx="35%" cy="85%"></circle>
         </svg>
         <!--Shooter status indicator-->
         <svg id="shooter">
-            <rect width="100%" height="100%"></rect>
-            <text>RPM</text>
+            <rect width="100%" height="60%"></rect>
+            <text x="29.5%" y="35%">3200</text>
+            <text class="smallText" x="5%" y="70%">Target Velocity: 3200</text>
         </svg>
         <!--Voltage-->
-        <svg id="power">
-            <rect width="40%" height="40%"></rect>
-        </svg>
-        <!--Power override switch-->
-        <div id="powerOverride">
-            <h1 class="powerButton">Limiter: ON</h1>
-            <button class="powerButton">Toggle Power Limit</button>
-        </div>
-
-        <!-- Example robot diagram, arm moves when encoder value changes -->
-        <!-- <svg id="robot-diagram" width="332" height="450">
-            <text x="40" y="340">Example SVG Robot Diagram</text>
-            <rect x="75" y="360" width="230" height="40"></rect>
-            <rect x="85" y="370" width="210" height="40"></rect>
-            <rect id="robot-arm" x="5" y="375" width="80" height="10"></rect>
-            <circle cx="100" cy="410" r="25"></circle>
-            <circle cx="260" cy="410" r="25"></circle>
-            <rect x="60" y="380" width="250" height="30"></rect>
-            <text id="team" x="185" y="405" text-anchor="middle">####</text>
-        </svg> -->
     </article>
     <!-- The sidebar of the dashboard. Designed for smaller control elements like selection boxes and small buttons. -->
     <aside>
         <!-- Example button which toggles /SmartDashboard/exampleValue NetworkTables value.
             The <p> below then says the value. -->
-        <div id="driveMode-section">
-            <button id="driveMode-button">Change drive mode value</button>
-            <p id="driveMode-readout">Value is undefined</p>
-        </div>
         <!-- Autonomous selector -->
         <div class="select-container">
             <select id="auto-select">
-                <option>No auto modes found</option>
-                <!-- This gets populated by JS -->
+                <option class="left">Auto Left</option>
+                <option class="mid">Auto Mid</option>
+                <option class="right">Auto Right</option>
             </select>
+        </div>
+        <div id="driveMode-section">
+            <button id="driveMode-button">Change Mode</button>
+            <p id="driveMode-readout">Robot Oriented</p>
         </div>
     </aside>
     <div id="login">
